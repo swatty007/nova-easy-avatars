@@ -20,7 +20,7 @@ composer require swatty007/nova-easy-avatars
 ## Configuration
 All fields work without any additional configuration out of the box.
 You can however, overwrite their Name & Attribute fields to your liking as on any other Nova field.
-Furthermore, you can control the size of your avatars with the **setSize()** method.
+Furthermore, you can control the size of your avatars with the **setSize()** && **setFontSize()**(Initials only) method.
 
 The Laravolt based Initials field gives you some extra controls over the look & feel of your Avatar via its configuration file.
 For details check out the package's documentation under: https://github.com/laravolt/avatar

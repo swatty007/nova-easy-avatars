@@ -2,8 +2,6 @@
 
 namespace Swatty007\NovaEasyAvatars\Fields;
 
-use Laravolt\Avatar\Avatar;
-
 class Initials extends AvatarBase
 {
     /**
@@ -16,10 +14,10 @@ class Initials extends AvatarBase
     protected function resolveAttribute($resource, $attribute)
     {
         $callback = function () use ($resource, $attribute) {
-            $return = Avatar::create($resource{$attribute})
+            return \Avatar::create($resource[$attribute])
                 ->setDimension($this->size)
+                ->setFontSize($this->fontSize)
                 ->toBase64();
-            return $return->encoded;
         };
 
         $this->preview($callback)->thumbnail($callback);

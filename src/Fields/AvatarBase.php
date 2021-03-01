@@ -6,7 +6,8 @@ use Laravel\Nova\Fields\Avatar;
 
 class AvatarBase extends Avatar
 {
-    public int $size = 300;
+    public int $size = 512;
+    public int $fontSize = 256;
 
     /**
      * Create a new field.
@@ -29,9 +30,25 @@ class AvatarBase extends Avatar
      * Allows overwriting our Avatars output size.
      *
      * @param int $size
+     * @return $this
      */
-    public function setSize($size = 300)
+    public function setSize($size = 100)
     {
         $this->size = $size;
+
+        return $this;
+    }
+
+    /**
+     * Allows overwriting our Avatars output size.
+     *
+     * @param int $size
+     * @return $this
+     */
+    public function setFontSize($size = 50)
+    {
+        $this->fontSize = $size;
+
+        return $this;
     }
 }
