@@ -1,0 +1,65 @@
+{
+    "name": "swatty007/nova-easy-avatars",
+    "description": "Additional Plug & Play Avatars for your Nova Panel.",
+    "keywords": [
+        "swatty007",
+        "nova-easy-avatars",
+        "avatars",
+        "laravel-nova"
+    ],
+    "homepage": "https://github.com/swatty007/nova-easy-avatars",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Martin Niehoff",
+            "email": "info@martin-niehoff.de",
+            "role": "Developer",
+            "homepage": "https://martin-niehoff.de"
+        }
+    ],
+    "require": {
+        "php": "^7.4|^8.0",
+        "illuminate/support": "^7.0|^8.0",
+        "laravolt/avatar": "^4.1",
+        "yzalis/identicon": "^2.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^5.13|^6.7",
+        "phpunit/phpunit": "^9.3",
+        "phpmd/phpmd": "@stable",
+        "phpmetrics/phpmetrics": "^2.7",
+        "friendsofphp/php-cs-fixer": "^2.18"
+    },
+    "autoload": {
+        "psr-4": {
+            "Swatty007\\NovaEasyAvatars\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Swatty007\\NovaEasyAvatars\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-f": "vendor/bin/phpunit --filter",
+        "test-coverage": "vendor/bin/phpunit --coverage-html ./build/coverage",
+        "format": "vendor/bin/php-cs-fixer fix --config=.php_cs.dist",
+        "smell": "vendor/bin/phpmd src/ html cleancode,naming --reportfile ./build/phpmd.html",
+        "metrics": "vendor/bin/phpmetrics --report-html=./build/metrics src/"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Swatty007\\NovaEasyAvatars\\NovaEasyAvatarsServiceProvider"
+            ],
+            "aliases": {
+                "NovaEasyAvatars": "Swatty007\\NovaEasyAvatars\\NovaEasyAvatarsFacade"
+            }
+        }
+    }
+}
